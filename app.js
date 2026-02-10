@@ -207,7 +207,16 @@ const increaseStat = (stat) => {
 };
 
 const train = () => {
+  if (!career || !career.stats) {
+    logEvent("Crie uma carreira antes de treinar.");
+    return;
+  }
+
   const statKeys = Object.keys(career.stats);
+  if (statKeys.length === 0) {
+    logEvent("Nenhum atributo disponível para treino.");
+    return;
+  }
   elements.modalTitle.textContent = "Sessão de Treino";
   elements.modalDescription.textContent = "Escolha um atributo para receber +2 de XP.";
   elements.modalOptions.innerHTML = "";
@@ -328,6 +337,7 @@ const resetCareer = () => {
   elements.eventLog.innerHTML = "";
   elements.offersList.innerHTML = "";
   elements.historyList.innerHTML = "";
+  closeModal();
   showCreation();
 };
 
