@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modo Carreira - Project Soccer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1>Project Soccer</h1>
+        <p class="subtitle">Modo Carreira • 25 temporadas</p>
+      </div>
+      <button id="newCareerBtn" class="ghost">Novo modo carreira</button>
+    </header>
+
+    <main>
+      <section id="creationSection" class="card">
+        <h2>Criar Jogador</h2>
+        <form id="creationForm" class="grid">
+          <label>
+            Nome do jogador
+            <input id="playerName" type="text" placeholder="Ex: Alex Santos" required />
+          </label>
+          <label>
+            Idade inicial
+            <input id="playerAge" type="number" min="16" max="21" value="18" required />
+          </label>
+          <label>
+            Posição
+            <select id="playerPosition" required>
+              <option value="linha">Linha (ZAG/LAT/VOL/MEI/ATA)</option>
+              <option value="goleiro">Goleiro</option>
+            </select>
+          </label>
+          <label>
+            Clube inicial
+            <select id="playerClub" required></select>
+          </label>
+          <button type="submit" class="primary">Começar carreira</button>
+        </form>
+      </section>
+
+      <section id="careerSection" class="card hidden">
+        <div class="career-header">
+          <div>
+            <h2 id="careerPlayerName">Jogador</h2>
+            <p class="muted" id="careerMeta">Meta</p>
+          </div>
+          <div class="season-info">
+            <div>
+              <span class="label">Temporada</span>
+              <strong id="seasonYear">1</strong>
+            </div>
+            <div>
+              <span class="label">Idade</span>
+              <strong id="seasonAge">18</strong>
+            </div>
+            <div>
+              <span class="label">Clube</span>
+              <strong id="seasonClub">-</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>Atributos</h3>
+            <div id="statsList" class="stats"></div>
+            <div class="xp">
+              <span>XP disponível</span>
+              <strong id="xpAvailable">0</strong>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Atividades da temporada</h3>
+            <div class="actions">
+              <button id="trainBtn" class="primary">Treinar</button>
+              <button id="playMatchBtn">Simular jogo</button>
+              <button id="endSeasonBtn" class="ghost">Encerrar temporada</button>
+            </div>
+            <div class="summary">
+              <div>
+                <span class="label">Jogos simulados</span>
+                <strong id="matchesPlayed">0</strong>
+              </div>
+              <div>
+                <span class="label">Forma</span>
+                <strong id="playerForm">Neutro</strong>
+              </div>
+              <div>
+                <span class="label">Avaliação</span>
+                <strong id="playerRating">0</strong>
+              </div>
+            </div>
+            <div class="log" id="eventLog"></div>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>Ofertas de clubes</h3>
+            <p class="muted">As ofertas aparecem ao final da temporada.</p>
+            <div id="offersList" class="offers"></div>
+          </div>
+          <div class="panel">
+            <h3>Histórico</h3>
+            <ul id="historyList" class="history"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Feito em HTML, CSS e JS • Dados salvos localmente no navegador.</p>
+    </footer>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h3 id="modalTitle">Treino</h3>
+      <p id="modalDescription">Escolha um atributo para evoluir.</p>
+      <div id="modalOptions" class="modal-options"></div>
+      <button id="modalClose" class="ghost">Fechar</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

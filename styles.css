@@ -1,0 +1,295 @@
+:root {
+  color-scheme: dark;
+  --bg: #0c0f14;
+  --panel: #131824;
+  --panel-light: #1c2333;
+  --text: #f4f6fb;
+  --muted: #9aa4b2;
+  --accent: #2be6a1;
+  --accent-dark: #1bb57e;
+  --warning: #ffb347;
+  --danger: #ff6b6b;
+  --border: #2a3347;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+input,
+select {
+  padding: 10px 12px;
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+  background: var(--panel-light);
+  color: var(--text);
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+button.primary {
+  background: var(--accent);
+  color: #05130d;
+}
+
+button.ghost {
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.career-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.season-info {
+  display: flex;
+  gap: 24px;
+  text-align: right;
+}
+
+.season-info .label,
+.label {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.panel {
+  background: var(--panel-light);
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.stats {
+  display: grid;
+  gap: 10px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  background: #111726;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.stat-row button {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+.xp {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.log {
+  max-height: 160px;
+  overflow-y: auto;
+  background: #0f1422;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.log p {
+  margin-bottom: 8px;
+}
+
+.offers {
+  display: grid;
+  gap: 12px;
+}
+
+.offer-card {
+  background: #0f1422;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.offer-card button {
+  font-size: 0.75rem;
+}
+
+.history {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+.history li {
+  background: #0f1422;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 16, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal-card {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  width: min(380px, 100%);
+  display: grid;
+  gap: 12px;
+}
+
+.modal-options {
+  display: grid;
+  gap: 8px;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: var(--accent-dark);
+  color: #05130d;
+}
+
+.badge.warning {
+  background: var(--warning);
+  color: #2f1c00;
+}
+
+.badge.danger {
+  background: var(--danger);
+  color: #2b0c0c;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .season-info {
+    flex-direction: column;
+    text-align: left;
+  }
+}
